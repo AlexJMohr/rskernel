@@ -1,6 +1,7 @@
 [package]
 authors = ["Alex Mohr <mohralexj@gmail.com>"]
 edition = "2018"
+licence = "GPL-3.0-or-later"
 name = "blog_os"
 version = "0.1.0"
 

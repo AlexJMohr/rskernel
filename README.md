@@ -1,5 +1,9 @@
 # x86_64 Kernel Project
 
+## Licence
+
+GPL 3.0 or any later version
+
 ## Install dependencies
 ```sh
 rustup component add llvm-tools-preview rust-src
