@@ -29,3 +29,7 @@ version = "1.0"
 test-args = ["-device", "isa-debug-exit,iobase=0xf4,iosize=0x04", "-serial", "stdio", "-display", "none"] 
 test-success-exit-code = 33 # (0x10 << 1) | 1
 test-timeout = 300 # seconds
+
+[[test]]
+harness = false
+name = "should_panic"

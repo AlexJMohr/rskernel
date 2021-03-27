@@ -183,3 +183,10 @@ fn test_println_line_wrapping() {
     let s = "sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam";
     println!("{}", s);
 }
+
+#[test_case]
+fn test_invalid_character_output() {
+    println!("★");
+    let screen_char = WRITER.lock().buffer.chars[BUFFER_HEIGHT - 2][0].read();
+    assert_eq!(char::from(screen_char.ascii_character), 0xfe as char);
+}
