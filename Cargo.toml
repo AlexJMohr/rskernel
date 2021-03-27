@@ -13,5 +13,10 @@ panic = "abort" # disable stack unwinding on panic
 panic = "abort" # disable stack unwinding on panic
 
 [dependencies]
-# BIOS bootloader
-bootloader = "0.9.8"
+bootloader = "0.9.8" # for BIOS bootloader.
+spin = "0.5.2" 
+volatile = "0.2.6" # to mark VGA buffer as volatile. TODO: try upgrading
+
+[dependencies.lazy_static]
+features = ["spin_no_std"]
+version = "1.0"
