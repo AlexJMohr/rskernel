@@ -31,6 +31,5 @@ test-success-exit-code = 33 # (0x10 << 1) | 1
 test-timeout = 300 # seconds
 
 [[test]]
-harness = false 
-name = "should_panic" 
-path = "tests/should_panic.rs" # this shouldn't be necessary, but GitHub action fails without it
+harness = false
+name = "should_panic"
