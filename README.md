@@ -25,7 +25,7 @@ Following this guide: https://os.phil-opp.com/
 - [x] A Freestanding Rust Binary
 - [x] A Minimal Rust Kernel
 - [x] VGA Text Mode
-- [ ] Testing
+- [x] Testing
 
 ### Interrupts
 
