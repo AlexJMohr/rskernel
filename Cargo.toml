@@ -1,0 +1,17 @@
+[package]
+authors = ["Alex Mohr <mohralexj@gmail.com>"]
+edition = "2018"
+name = "blog_os"
+version = "0.1.0"
+
+# the profile used for `cargo build`
+[profile.dev]
+panic = "abort" # disable stack unwinding on panic
+
+# the profile used for `cargo build --release`
+[profile.release]
+panic = "abort" # disable stack unwinding on panic
+
+[dependencies]
+# BIOS bootloader
+bootloader = "0.9.8"
