@@ -29,8 +29,8 @@ Following this guide: https://os.phil-opp.com/
 
 ### Interrupts
 
-- [ ] CPU Exceptions
-- [ ] Double Faults
+- [x] CPU Exceptions
+- [x] Double Faults
 - [ ] Hardware Interrupts
 
 ### Memory Management
