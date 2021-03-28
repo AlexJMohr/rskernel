@@ -36,7 +36,7 @@ Following this guide: https://os.phil-opp.com/
 ### Memory Management
 
 - [x] Introduction to Paging
-- [ ] Paging Implementation
+- [x] Paging Implementation
 - [ ] Heap Allocation
 - [ ] Allocator Designs
 
