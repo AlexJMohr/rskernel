@@ -38,7 +38,7 @@ Following this guide: https://os.phil-opp.com/
 - [x] Introduction to Paging
 - [x] Paging Implementation
 - [x] Heap Allocation
-- [ ] Allocator Designs
+- [x] Allocator Designs
 
 ### Multitasking
 
