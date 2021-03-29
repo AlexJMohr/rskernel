@@ -14,7 +14,8 @@ version = "0.4.1"
 panic = "abort" # disable stack unwinding on panic
 
 [dependencies]
-bootloader = {version = "0.9.8", features = ["map_physical_memory"]}# for BIOS bootloader.  
+bootloader = {version = "0.9.8", features = ["map_physical_memory"]}# for BIOS bootloader.   
+linked_list_allocator = "0.8.0" 
 pc-keyboard = "0.5.0" # interprets PS/2 keyboard scancode sets 1 and 2
 pic8259_simple = "0.2.0" # keyboard interrupts
 spin = "0.5.2" 
