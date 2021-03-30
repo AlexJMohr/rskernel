@@ -7,7 +7,12 @@
 extern crate alloc;
 
 use alloc::{boxed::Box, rc::Rc, vec, vec::Vec};
-use blog_os::{allocator, memory::BootInfoFrameAllocator, println};
+use blog_os::{
+    allocator,
+    memory::BootInfoFrameAllocator,
+    println,
+    task::{executor::Executor, keyboard},
+};
 use bootloader::{entry_point, BootInfo};
 use core::panic::PanicInfo;
 
@@ -17,6 +22,8 @@ entry_point!(kernel_main);
 pub fn kernel_main(boot_info: &'static BootInfo) -> ! {
     use blog_os::memory;
     use x86_64::VirtAddr;
+
+    use blog_os::task::Task;
 
     println!("Hello World{}", "!");
     blog_os::init();
@@ -53,8 +60,10 @@ pub fn kernel_main(boot_info: &'static BootInfo) -> ! {
     #[cfg(test)]
     test_main();
 
-    println!("It did not crash!");
-    blog_os::hlt_loop();
+    let mut executor = Executor::new();
+    executor.spawn(Task::new(example_task()));
+    executor.spawn(Task::new(keyboard::print_keypresses()));
+    executor.run();
 }
 
 /// Panic handler. Prints to the VGA buffer
@@ -70,4 +79,13 @@ fn panic(info: &PanicInfo) -> ! {
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {
     blog_os::test_panic_handler(info)
+}
+
+async fn async_number() -> u32 {
+    42
+}
+
+async fn example_task() {
+    let number = async_number().await;
+    println!("async number: {}", number);
 }
